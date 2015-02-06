@@ -32,8 +32,7 @@ namespace YoutubeDownloader
             string videoUrl = urlBox.Text;
 
             dl.GetId(videoUrl);
-            dl.videoInfo(videoUrl);
-            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)));
+            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)), videoUrl);
         }
 
         private void urlBox_TextChanged(object sender, TextChangedEventArgs e)
