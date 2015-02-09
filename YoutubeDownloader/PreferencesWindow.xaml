@@ -7,9 +7,9 @@
         <xctk:WatermarkTextBox x:Name="FilePath_Box" Watermark="Enter default file path here" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="39" Margin="31,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="236" ToolTip="Where files are saved" TextChanged="FilePath_Box_TextChanged"/>
         <Label Content="Default file path" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="59,21,0,0" VerticalAlignment="Top" Width="176" FontWeight="Bold"/>
         <Label Content="Use default file name" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="59,141,0,0" VerticalAlignment="Top" Width="176" FontWeight="Bold"/>
-        <CheckBox Content="Yes" HorizontalAlignment="Left" Margin="125,172,0,0" VerticalAlignment="Top" ToolTip="Use video title as file name"/>
+        <CheckBox x:Name="DefaultFileName_ChkBox" Content="Yes" HorizontalAlignment="Left" Margin="125,172,0,0" VerticalAlignment="Top" ToolTip="Use video title as file name" Checked="DefaultFileName_ChkBox_Checked" IsChecked="True"/>
         <Button x:Name="Cancel_Btn" Content="Cancel" HorizontalAlignment="Left" Margin="160,207,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_Btn_Click"/>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="59,207,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button Content="Enter" HorizontalAlignment="Left" Margin="113,96,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="SavePreferences_Btn" Content="Save" HorizontalAlignment="Left" Margin="59,207,0,0" VerticalAlignment="Top" Width="75" Click="SavePreferences_Btn_Click"/>
+        <Button x:Name="FilePathEnter_Btn" Content="Enter" HorizontalAlignment="Left" Margin="113,96,0,0" VerticalAlignment="Top" Width="75" Click="FilePathEnter_Btn_Click"/>
     </Grid>
 </Window>

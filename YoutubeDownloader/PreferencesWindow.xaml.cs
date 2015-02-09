@@ -33,5 +33,25 @@ namespace YoutubeDownloader
         {
 
         }
+
+        private void FilePathEnter_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.DefaultFilePath = FilePath_Box.Text;
+        }
+
+        private void SavePreferences_Btn_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.Save();
+            this.Close();
+        }
+
+        private void DefaultFileName_ChkBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.DefaultFileName = true;
+            if (DefaultFileName_ChkBox.IsChecked == false)
+            {
+                Properties.Settings.Default.DefaultFileName = false;
+            }
+        }
     }
 }
