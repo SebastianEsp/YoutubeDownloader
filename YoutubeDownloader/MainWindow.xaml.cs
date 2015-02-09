@@ -32,7 +32,7 @@ namespace YoutubeDownloader
             string videoUrl = urlBox.Text;
 
             dl.GetId(videoUrl);
-            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)), videoUrl);
+            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)), videoUrl, dl.videoInfo("//title", videoUrl));
         }
 
         private void urlBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -43,6 +43,12 @@ namespace YoutubeDownloader
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void MenuItem_Preferences_Click(object sender, RoutedEventArgs e)
+        {
+            PreferencesWindow prefWin = new PreferencesWindow();
+            prefWin.Show();
         }
     }
 }

@@ -25,13 +25,16 @@
         <Label Content="        Format" HorizontalAlignment="Left" Margin="55,108,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
         <Image HorizontalAlignment="Left" Height="93" Margin="81,172,0,0" VerticalAlignment="Top" Width="183" Source="Content/YouTubeLogo.png"/>
         <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="344">
-            <MenuItem Header="File" Width="79">
+            <MenuItem Header="File" Width="81">
                 <MenuItem Header="Copy" HorizontalAlignment="Left" Command="Copy" Width="160"/>
                 <MenuItem Header="Cut" HorizontalAlignment="Left" Command="Cut" Width="160"/>
                 <MenuItem Header="Paste" HorizontalAlignment="Left" Width="160" Command="Paste"/>
                 <MenuItem Header="Undo" HorizontalAlignment="Left" Width="160" Command="Undo"/>
                 <Separator HorizontalAlignment="Left" Width="160"/>
                 <MenuItem x:Name="MenuItem_Exit" Header="Exit" HorizontalAlignment="Left" Width="160" Click="MenuItem_Exit_Click" InputGestureText="Alt+F4"/>
+            </MenuItem>
+            <MenuItem Header="Options" Width="80">
+                <MenuItem x:Name="MenuItem_Preferences" Header="Preferences" HorizontalAlignment="Left" Width="145" Click="MenuItem_Preferences_Click"/>
             </MenuItem>
         </Menu>
         <Button Content="Enter" HorizontalAlignment="Left" Margin="116,81,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click"/>

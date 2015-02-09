@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.VisualBasic;
 using System.Xml;
 using System.IO;
 using System.Net;
@@ -34,10 +35,18 @@ namespace YoutubeDownloader
             XmlNode titleNode = xmlDoc.SelectSingleNode(node);
 
             string title = titleNode.InnerText;
+          
+            string[] illegalChar = new string[] { @"\", "/", ":", "*", "?", '"'.ToString(), "<", ">", "|"};
+
+            foreach (string notAllowed in illegalChar)
+            {
+               title = title.Replace(notAllowed, "_");
+            }
+
             return title;
         }
 
-        public void videoDownload(string videoSource, string videoUrl)
+        public void videoDownload(string videoSource, string videoUrl, string videoTitle)
         {
             using (WebClient wc = new WebClient())
             {
@@ -59,7 +68,7 @@ namespace YoutubeDownloader
                 var streamsByPriority = streams.OrderBy(s => Array.IndexOf(itagByPriority, s["itag"]));
                 NameValueCollection preferredStream = streamsByPriority.FirstOrDefault();
 
-                string test = preferredStream["url"];
+                string test = preferredStream["itag"];
 
                 //foreach (string s in preferredStream)
                 //{
@@ -69,7 +78,15 @@ namespace YoutubeDownloader
                 //    }
                 //}
 
-                wc.DownloadFile(preferredStream["url"], @"C:\Users\SebastianEsp\Desktop\" + videoInfo("//title", videoUrl) + formatArr[0]);
+                if (!File.Exists(@"C:\Users\SebastianEsp\Desktop\" + videoTitle + formatArr[0]))
+                {
+                    wc.DownloadFile(preferredStream["url"], @"C:\Users\SebastianEsp\Desktop\" + videoTitle + formatArr[0]);
+                }
+                else
+                {
+                    string newName = Interaction.InputBox("A file with the same name already exist!\nPlease choose another name", "File already exist", "Enter new name here");
+                    wc.DownloadFile(preferredStream["url"], @"C:\Users\SebastianEsp\Desktop\" + newName + formatArr[0]);
+                }
             }
         }
     }
