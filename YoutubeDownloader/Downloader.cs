@@ -86,7 +86,7 @@ namespace YoutubeDownloader
                     allStreams.Add(streams.ElementAt(count));
                     count++;
                 }
-
+                
                 string[] test = allStreams.GetValues(4);
 
                 //Checks if file !exists, and downloads video to user defined location. If file exists user is promtet to use another name.
