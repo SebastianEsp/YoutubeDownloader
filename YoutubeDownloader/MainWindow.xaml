@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         ResizeMode="NoResize"
-        Title="MainWindow" Height="350" Width="350">
+        Title="Youtube Downloader" Height="350" Width="350">
     <Grid>
         <Button x:Name="DownloadBtn" Content="Download" HorizontalAlignment="Left" Margin="55,260,0,0" VerticalAlignment="Top" Width="221" Height="30" Click="DownloadBtn_Click"/>
         <xctk:WatermarkTextBox x:Name="urlBox" HorizontalAlignment="Left" Height="39" Margin="55,46,0,0" TextWrapping="Wrap" Watermark="              Enter Youtube URL here" VerticalAlignment="Top" Width="221" ToolTip="Enter Youtube URL here" TextChanged="urlBox_TextChanged"/>
