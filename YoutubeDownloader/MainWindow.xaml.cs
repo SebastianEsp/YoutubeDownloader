@@ -25,30 +25,32 @@ namespace YoutubeDownloader
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Downloader dl = new Downloader();
-
-            string videoUrl = urlBox.Text;
-
-            dl.GetId(videoUrl);
-            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)), videoUrl, dl.videoInfo("//title", videoUrl));
-        }
-
+        //Handles when text is changed
         private void urlBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
+        //Exits the application
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
+        //Opens the preferences configuration window.
         private void MenuItem_Preferences_Click(object sender, RoutedEventArgs e)
         {
             PreferencesWindow prefWin = new PreferencesWindow();
             prefWin.Show();
+        }
+
+        private void DownloadBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Downloader dl = new Downloader();
+
+            string videoUrl = urlBox.Text;
+
+            dl.videoDownload(dl.GetVideoSource(dl.GetId(videoUrl)), videoUrl, dl.videoInfo("//title", videoUrl));
         }
     }
 }

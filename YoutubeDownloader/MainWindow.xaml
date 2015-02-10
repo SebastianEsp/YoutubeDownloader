@@ -5,9 +5,9 @@
         ResizeMode="NoResize"
         Title="MainWindow" Height="350" Width="350">
     <Grid>
-        <Button x:Name="EnterBtn" Content="Download" HorizontalAlignment="Left" Margin="55,270,0,0" VerticalAlignment="Top" Width="221" Height="30"/>
-        <xctk:WatermarkTextBox x:Name="urlBox" HorizontalAlignment="Left" Height="39" Margin="55,29,0,0" TextWrapping="Wrap" Watermark="              Enter Youtube URL here" VerticalAlignment="Top" Width="221" ToolTip="Enter Youtube URL here" TextChanged="urlBox_TextChanged"/>
-        <ComboBox x:Name="quality_ComboBox" HorizontalAlignment="Left" Margin="176,145,0,0" VerticalAlignment="Top" Width="100">
+        <Button x:Name="DownloadBtn" Content="Download" HorizontalAlignment="Left" Margin="55,260,0,0" VerticalAlignment="Top" Width="221" Height="30" Click="DownloadBtn_Click"/>
+        <xctk:WatermarkTextBox x:Name="urlBox" HorizontalAlignment="Left" Height="39" Margin="55,46,0,0" TextWrapping="Wrap" Watermark="              Enter Youtube URL here" VerticalAlignment="Top" Width="221" ToolTip="Enter Youtube URL here" TextChanged="urlBox_TextChanged"/>
+        <ComboBox x:Name="quality_ComboBox" HorizontalAlignment="Left" Margin="176,135,0,0" VerticalAlignment="Top" Width="100">
             <ComboBoxItem Content="1080P" HorizontalAlignment="Left" Width="118" IsEnabled="False"/>
             <ComboBoxItem Content="720P" HorizontalAlignment="Left" Width="118" IsEnabled="False"/>
             <ComboBoxItem Content="480P" HorizontalAlignment="Left" Width="118" IsEnabled="False"/>
@@ -15,15 +15,15 @@
             <ComboBoxItem Content="240P" HorizontalAlignment="Left" Width="118" IsEnabled="False"/>
             <ComboBoxItem Content="144P" HorizontalAlignment="Left" Width="118" IsEnabled="False"/>
         </ComboBox>
-        <ComboBox HorizontalAlignment="Left" Margin="55,145,0,0" VerticalAlignment="Top" Width="100">
+        <ComboBox HorizontalAlignment="Left" Margin="55,135,0,0" VerticalAlignment="Top" Width="100">
             <ComboBoxItem Content="MP4" HorizontalAlignment="Left" Width="98"/>
             <ComboBoxItem Content="FLV" HorizontalAlignment="Left" Width="98"/>
             <ComboBoxItem Content="3GP" HorizontalAlignment="Left" Width="98"/>
             <ComboBoxItem Content="WEBM" HorizontalAlignment="Left" Width="98"/>
         </ComboBox>
-        <Label Content="        Quality" HorizontalAlignment="Left" Margin="176,108,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
-        <Label Content="        Format" HorizontalAlignment="Left" Margin="55,108,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
-        <Image HorizontalAlignment="Left" Height="93" Margin="81,172,0,0" VerticalAlignment="Top" Width="183" Source="Content/YouTubeLogo.png"/>
+        <Label Content="        Quality" HorizontalAlignment="Left" Margin="176,90,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Label Content="        Format" HorizontalAlignment="Left" Margin="55,90,0,0" VerticalAlignment="Top" Width="100" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="93" Margin="71,162,0,0" VerticalAlignment="Top" Width="183" Source="Content/YouTubeLogo.png"/>
         <Menu HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" Width="344">
             <MenuItem Header="File" Width="81">
                 <MenuItem Header="Copy" HorizontalAlignment="Left" Command="Copy" Width="160"/>
@@ -37,6 +37,5 @@
                 <MenuItem x:Name="MenuItem_Preferences" Header="Preferences" HorizontalAlignment="Left" Width="145" Click="MenuItem_Preferences_Click"/>
             </MenuItem>
         </Menu>
-        <Button Content="Enter" HorizontalAlignment="Left" Margin="116,81,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click"/>
     </Grid>
 </Window>
