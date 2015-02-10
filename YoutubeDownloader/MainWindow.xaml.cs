@@ -30,7 +30,7 @@ namespace YoutubeDownloader
         {
 
         }
-
+        
         //Exits the application
         private void MenuItem_Exit_Click(object sender, RoutedEventArgs e)
         {
